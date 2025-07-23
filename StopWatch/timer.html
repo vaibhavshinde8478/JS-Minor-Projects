@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+       #Timer{
+            display: flex;
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+            border-radius: 50%;
+            background-color: rgb(5, 0, 0);
+            justify-content: center;
+            margin: auto;
+            font-size: 100px;
+            align-items: center;
+            color: rgb(253, 254, 254);
+        }
+        
+        input{
+            border: none;
+            width: 200px;
+            height:200px;
+            font-size:100px ;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        a{  display: inline-flex;
+        height: 80px;
+        width: 80px;
+        font-size: medium;
+        margin-top: 5px;
+        background-color: aqua;
+        border: 2px solid black;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold ;
+    }
+    #container{
+        margin: auto;
+        margin-top: 10px;
+    }
+    div button{
+            height: 80px;
+            width: 80px;
+            font-size: medium;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Timer</h1></center>
+    <div id="Timer">
+        <input type="number" id="tictic">
+    </div>
+<center>
+    <div id="container">
+        <button id="Start">Start</button>
+        <button id="Pause">Pause</button>
+        <button id="Reset">Reset</button><br>
+        <a href="Clock.html">Clock</a>
+        <a href="index.html">StopWatch</a>
+    </div>
+</center>
+<script>
+
+    let start = document.querySelector("#Start")
+    let stop = document.querySelector("#Pause")
+    let div = document.querySelector("#Timer")
+    let reset = document.querySelector("#Reset")
+    let input = document.getElementById("tictic");
+    let stopInterval1;
+
+start.addEventListener("click",function(){
+    let i=60;
+    let j=input.value;
+    j--;
+    stopInterval1 = setInterval(function(){
+     if(i==0)
+    {
+        i=60;
+        j--;
+    }   
+    div.innerHTML=`${j}:${--i}`;
+    let randomColorR = Math.floor(Math.random()*255) 
+    let randomColorG = Math.floor(Math.random()*255) 
+    let randomColorB = Math.floor(Math.random()*255) 
+    let body = document.querySelector("body");
+    body.style.backgroundColor=`rgb(${randomColorR},${randomColorG},${randomColorB})`
+    },1000)
+    });
+   
+    stop.addEventListener("click",function(){
+       clearInterval(stopInterval1);
+       
+    });
+    reset.addEventListener("click",function(){
+       location.reload();
+        
+    })
+    
+
+</script>
+</body>
+</html>

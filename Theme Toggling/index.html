@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Changer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    <div class="Theme" id="Black"></div>
+    <div class="Theme" id="Pink"></div>
+    <div class="Theme" id="Green"></div>
+    <div class="Theme" id="Yellow"></div>
+    <div class="Theme" id="Orange"></div>
+ <script>
+   
+   
+   const color = document.querySelectorAll(".Theme")
+    color.forEach(function (color){
+        color.addEventListener('click',function (e){
+            if(e.target.id==="Black")
+          {
+            document.body.style.backgroundColor="Black"
+          }
+           if(e.target.id==="Yellow")
+          {
+            document.body.style.backgroundColor="Yellow"
+          } if(e.target.id==="Orange")
+          {
+            document.body.style.backgroundColor="Orange"
+          } if(e.target.id==="Green")
+          {
+            document.body.style.backgroundColor="Green"
+          }
+          if(e.target.id==="Pink")
+          {
+            document.body.style.backgroundColor="Pink"
+          }
+        });
+    });
+ </script>   
+</body>
+</html>

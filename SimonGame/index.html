@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Game</title>
+    <style>
+        body{
+            display: flexbox;
+        }
+        h1{
+            text-align: center;
+        }
+        h2{
+            display: inline-block;
+            text-align: center;
+        }
+        #Level{
+            margin-right: 30px;
+            margin-left: 5px;
+        }
+        div{
+            display: inline-flex;
+            width: 200px;
+            height: 200px;
+            font-size: x-large;
+            font-style: bold;
+            text-align: center;
+            margin: auto;
+        }
+        #Red{
+            background-color: red;
+            margin-left: 450px;
+            margin-bottom: 10px;
+        }
+         #Blue{
+            background-color: blue;
+            margin-bottom: 10px;
+        }
+         #Green{
+            background-color: green;
+            margin-left: 450px;
+        }
+         #Purple{
+            background-color: purple;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Welcome to Simon Game</h1>
+    <h2>Level :<h2 id="Level"></h2></h2><h2>Score:<h2 id="Score"></h2></h2><br>    
+    <span id="container">
+    <div id="Red" class="box"  type="button">1</div>
+    <div id="Blue" class="box" type="button">2</div><br>
+    <div id="Green" class="box" type="button">3</div>
+    <div id="Purple" class="box" type="button">4</div></span>
+   
+    <script>
+    let Score = document.getElementById("Score")
+    let Level = document.querySelector("#Level")
+    let container = document.querySelector("#container")
+    let Red = document.getElementById("Red")
+    let Green = document.getElementById("Green")
+    let Blue = document.getElementById("Blue")
+    let Purple = document.getElementById("Purple")
+
+    function StartGame(){
+        container.addEventListener("",function(){
+            let score = 0
+            let level = 1
+        })
+    }
+     
+
+    </script>
+</body>
+</html>

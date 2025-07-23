@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center><h1><strong>Task Manager</strong></h1></center>
+    <form style="border: 2px solid black;">
+        <Label for="taskname">Enter Your todays tasks :</Label><input type="text" id="taskname" placeholder="Enter your task Here">
+        <br><br>
+        <div>
+            <button id="addTask">Add Task</button>
+        </div>
+        <div>
+            <ul id="ul">
+                
+            </ul>
+        </div>
+    </form>   
+    <script>
+        let button = document.getElementById("addTask")
+        let input = document.getElementById("taskname")
+        let ul = document.getElementById("ul")
+
+        button.addEventListener("click",function(e){
+            e.preventDefault()
+            let li = document.createElement("li")
+            let addDelete = document.createElement("button")
+            addDelete.textContent="Delete"
+            li.textContent=input.value
+            li.appendChild(addDelete)
+            addDelete.addEventListener("click",function(){
+                this.parentElement.remove();
+            })
+            ul.appendChild(li)
+            input.value=""
+        })
+    </script>
+</body>
+</html>

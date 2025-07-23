@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        
+        #clock{
+             display: flex;
+            height: 300px;
+            width: 400px;
+            border: 2px solid black;
+            border-radius: 50%;
+            background-color: rgb(5, 0, 0);
+            justify-content: center;
+            margin: auto;
+            font-size: 80px;
+            align-items: center;
+            color: rgb(253, 254, 254);
+         }
+         
+        a{  display: inline-flex;
+        height: 80px;
+        width: 80px;
+        font-size: medium;
+        margin-top: 10px;
+        background-color: aqua;
+        border: 2px solid black;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold ;
+    }
+    </style>
+</head>
+<body><center><h1>Clock</h1></center>
+    <div id="clock"></div>
+ <center>
+    <div id="container">
+        <a href="index.html">StopWatch</a>
+        <a href="timer.html">Timer</a>
+    </div>
+</center>
+    <script>
+        setInterval(function(){
+        let time = new Date();
+        finalTime = time.toLocaleTimeString();
+        document.getElementById('clock').innerHTML=`${finalTime}`
+        },1000)
+
+    
+    setInterval(function(){
+    let randomColorR = Math.floor(Math.random()*255) 
+    let randomColorG = Math.floor(Math.random()*255) 
+    let randomColorB = Math.floor(Math.random()*255) 
+    let body = document.querySelector("body");
+    body.style.backgroundColor=`rgb(${randomColorR},${randomColorG},${randomColorB})`
+    },1000)
+    
+    
+    
+        
+    </script>
+</body>
+</html>

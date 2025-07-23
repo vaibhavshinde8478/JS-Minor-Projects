@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <Style>
+        #stopwatch{
+            display: flex;
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+            border-radius: 50%;
+            background-color: rgb(5, 0, 0);
+            justify-content: center;
+            margin: auto;
+            font-size: 100px;
+            align-items: center;
+            color: rgb(253, 254, 254);
+        }
+        div button{
+            height: 80px;
+            width: 80px;
+            font-size: medium;
+            background-color: aqua;
+        }
+    #container{
+        margin: auto;
+        margin-top: 10px;
+    }
+    
+    h1{
+        font-style: bold; 
+    }
+    a{ display: inline-flex;
+        height: 80px;
+        width: 80px;
+        font-size: medium;
+        margin-top: 10px;
+        background-color: aqua;
+        border: 2px solid black;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold ;
+    }
+    </Style>
+</head>
+<body>
+    <center><h1>StopWatch</h1></center>
+    <div id="stopwatch">00</div>
+<center>
+    <div id="container">
+        <button id="Start">Start</button>
+        <button id="Stop">Stop</button><br>
+        <a href="Clock.html">Clock</a>
+        <a href="timer.html">Timer</a>
+    </div>
+</center>
+<script>
+
+    let start = document.querySelector("#Start")
+    let stop = document.querySelector("#Stop")
+    let div = document.querySelector("#stopwatch")
+    let stopInterval;
+    start.addEventListener("click",function(){
+    let i=0;
+    stopInterval = setInterval(function(){
+    div.innerHTML=`${++i}`;
+    let randomColorR = Math.floor(Math.random()*255) 
+    let randomColorG = Math.floor(Math.random()*255) 
+    let randomColorB = Math.floor(Math.random()*255) 
+    let body = document.querySelector("body");
+    body.style.backgroundColor=`rgb(${randomColorR},${randomColorG},${randomColorB})`
+    },1000)
+    });
+    
+    stop.addEventListener("click",function(){
+       clearInterval(stopInterval);
+    });
+
+</script>
+
+</body>
+</html>
